@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WELCOME</title>
+    <script src="https://kit.fontawesome.com/e4281faa61.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="edulogo-1.png">
+     <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            min-height: 80vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(banner2.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        
+        }
+        .header img{
+            width: 150px;
+            margin-bottom: 12px;
+        }
+       .sticky .header .nav-links{
+        position: sticky;
+        top: 0;
+       }
+       
+        .nav-links{
+            flex: 1;
+            text-align: right;
+            margin: 28px;
+            margin-top: -115px;
+
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 17px;
+
+        }
+        .nav-links ul li a:hover{
+            color: rgb(204, 171, 37);
+            
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        
+        .dropdown-content{
+            display:none;
+            margin-top: 10px;
+            text-align: left;
+
+        }
+        .nav-links ul li:hover .dropdown-content{
+            position: absolute;
+            display: block;
+
+        } 
+        
+        .text-box{
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: (-50,-50);
+            
+        }
+        .text-box h1{
+            font-size: 60px;
+        }
+        .text-box p{
+            margin: 10px 0 40px;
+            font-size: 14px;
+            color: #fff;
+        }
+        @media(max-width: 700px){
+            .text-box h1{
+                font-size: 20px;
+            }
+            .nav-links ul li{
+                display: block;
+            }
+            .nav-links{
+                position: absolute;
+                background: #090909d4;
+                height: 50vh;
+                width: 150px;
+                top: 0;
+                right: 0;
+                margin: 0;
+                text-align: center;
+                z-index:2;
+            }
+        }
+      
+                                                          
+        .footer{
+            background: rgba(0, 0, 0, 0.2);
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            /* margin-top: 35%; */
+        }
+        .footer h4{
+            margin-bottom: 25px;
+            margin-top: 20px;
+            font-weight: 600;
+
+        }
+        .icons{
+            color: #f44336;
+            margin: 0 13px;
+            cursor: pointer;
+            padding: 18px 0;
+
+        }
+        
+
+     </style> 
+</head>
+<body>
+    <div class="sticky">
+    <section class="header">
+            <a href="index.html"><img src="edulogo-1.png"></a>
+    
+            <div class="nav-links">
+                <ul>
+                    <li class="active"><a href="#"><i class="fa-solid fa-house fa-fade"></i>&nbsp;&nbsp;HOME</a></li>
+                    <li><a href="#"><i class="fa-solid fa-clipboard-user fa-fade"></i>&nbsp;&nbsp;STAFF</a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="#">NEW</a></li>
+                            <li><a href="#">EXISTING</a></li>
+                        </ul>
+                    </div>
+                    </li>
+                    <li><a href="#"><i class="fa-solid fa-user-graduate fa-fade"></i>&nbsp;&nbsp;STUDENT</a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="#">NEW</a></li>
+                            <li><a href="#">EXISTING</a></li>
+                        </ul>
+                    </div>
+                    </li>
+                    <li><a href="#"><i class="fa-solid fa-right-to-bracket fa-fade"></i>&nbsp;&nbsp;LEAVE</a>
+                    <div class="dropdown-content">
+                            <ul>
+                                <li><a href="#">STAFF LEAVE</a></li>
+                                <li><a href="#">LEAVE EXISTING</a></li>
+                                
+                            </ul>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+                <div class="text-box">
+                    <h1>WELCOME ADMIN</h1>
+                    <!-- <p>Education is not the filling of a pail, but the lighting of a fire.......!
+                    </p>
+                        -->
+                </div>
+    </section>
+                <section class="footer">
+                    <h4>EDU WORLD</h4>
+                    <p>EDU WORLD Arts And Science College, started in 1996, is one of the renowned private institutions of CANADA.
+                    The college offers a range of courses approved by AICTE and affiliated to CANADA University. 
+                    EDU WORLD Arts And Science College is a part of EDU WORLD Education Holding Group.</p>
+
+                    <div class="icons">
+                        <i class="fa-brands fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-brands fa-twitter"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-brands fa-square-instagram"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+
+                </section>
+    </div>
+        
+</body>
+</html>

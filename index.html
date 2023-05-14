@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <script src="https://kit.fontawesome.com/e4281faa61.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="edulogo-1.png">
+     <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(background.jpg);
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        
+        }
+        .header img{
+            width: 150px;
+            margin-bottom: 12px;
+        }
+       .sticky .header .nav-links{
+        position: sticky;
+        top: 0;
+       }
+       
+        .nav-links{
+            flex: 1;
+            text-align: right;
+            margin: 28px;
+            margin-top: -115px;
+
+        }
+        .nav-links ul li{
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+        .nav-links ul li a{
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 17px;
+
+        }
+        .nav-links ul li a:hover{
+            color: rgb(204, 171, 37);
+            
+        }
+        .nav-links ul li::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .nav-links ul li:hover::after{
+            width: 100%;
+        }
+        
+        .dropdown-content{
+            display:none;
+            margin-top: 10px;
+            text-align: left;
+
+        }
+        .nav-links ul li:hover .dropdown-content{
+            position: absolute;
+            display: block;
+
+        } 
+        
+        .text-box{
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            top: 36%;
+            left: 12%;
+            transform: (-50,-50);
+            
+        }
+        .text-box h1{
+            font-size: 50px;
+        }
+        .text-box p{
+            margin: 10px 0 40px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+        .hero-btn{
+            display: inline-block;
+            text-decoration: none;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+
+        }
+        .hero-btn:hover{
+            border: 1px solid rgb(231, 194, 45);
+            color: rgb(231, 194, 45);
+        }
+        .hero-btn::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .hero-btn:hover::after{
+            width: 100%;
+        }
+        @media(max-width: 700px){
+            .text-box h1{
+                font-size: 20px;
+            }
+            .nav-links ul li{
+                display: block;
+            }
+            .nav-links{
+                position: absolute;
+                background: #090909d4;
+                height: 50vh;
+                width: 150px;
+                top: 0;
+                right: 0;
+                margin: 0;
+                text-align: center;
+                z-index:2;
+            }
+        }
+        .courses{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 10px;
+        }
+        h1{
+            font-size: 36px;
+            font-weight: 600;
+        }
+        .courses h1::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .courses h1:hover::after{
+            width: 100%;
+        }
+        .row{
+            margin-top: 5%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .course-col{
+            flex-basis: 31%;
+            background: #fff3f3;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            padding: 20px 12px;
+            box-sizing: border-box;
+            transition: 0.5s;
+        }
+        h3{
+            text-align: center;
+            font-weight: 600;
+            margin: 10px 0;
+
+        }
+        .course-col:hover{
+            box-shadow: 0 0 20px 0px rgba(212, 28, 28, 0.727);
+        }
+        @media(max-width:700px){
+            .row{
+                flex-direction: column;
+            }
+        }
+        .campus{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .campus-col{
+            flex-basis: 32%;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .campus-col img{
+            width: 100%;
+        }
+        .campus h1::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .campus h1:hover::after{
+            width: 100%;
+        }
+        .layer{
+            background:transparent;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.5s;
+        }
+        .layer:hover{
+            background: rgba(24, 23, 23, 0.7 );
+        }
+        .facilities{
+           
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .facilities-col{
+            flex-basis: 31%;
+            border-radius: 10px;
+            margin-bottom: 5%;
+            text-align: left;
+
+        }
+        .facilities-col img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .facilities-col h3{
+            margin-top: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .facilities h1::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .facilities h1:hover::after{
+            width: 100%;
+        }
+        .facilities h3::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+        .facilities h3:hover::after{
+            width: 50%;
+        }
+        .footer{
+            background: rgba(0, 0, 0, 0.2);
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .footer h4{
+            margin-bottom: 25px;
+            margin-top: 20px;
+            font-weight: 600;
+
+        }
+        .icons{
+            color: #f44336;
+            
+            margin: 0 5px;
+            cursor: pointer;
+            padding: 18px 0;
+
+        }
+     </style> 
+</head>
+<body>
+    <div class="sticky">
+    <section class="header">
+            <a href="index.html"><img src="edulogo-1.png"></a>
+    
+            <div class="nav-links">
+                <ul>
+                    <li class="active"><a href="INDEX.HTML"><i class="fa-solid fa-house fa-fade"></i>&nbsp;&nbsp;HOME</a></li>
+                    <li><a href="#"><i class="fa-solid fa-right-to-bracket fa-fade"></i>&nbsp;&nbsp;ABOUT</a>
+                        <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="#">EDU-WORLD</a></li>
+                                    <li><a href="#">COLLEGES</a></li>
+                                    <li><a href="#">PROGRAMS</a></li>
+                                    <li><a href="#">PACKAGES</a></li>
+                                    <li><a href="#">BENIFITS</a></li>
+                                    
+                                    
+                                </ul>
+                          </div>
+                        </li>
+                    <li><a href="#courses"><i class="fa-solid fa-right-to-bracket fa-fade"></i>&nbsp;&nbsp;COURSES</a>
+                        <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="#">ENGINEERING</a></li>
+                                    <li><a href="#">BACHLOR'S</a></li>
+                                    <li><a href="#">DIPLOMA</a></li>
+                                    <li><a href="#">PG</a></li>
+                                    <li><a href="#">MEDICAL</a></li>
+                                    <li><a href="#">NURSING</a></li>
+                                    
+                                </ul>
+                          </div>
+                        </li>
+                    <li><a href="#facilities"><i class="fa-solid fa-right-to-bracket fa-fade"></i>&nbsp;&nbsp;SERVICES</a>
+                        <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="#">ADMISSIONS</a></li>
+                                    <li><a href="#">COUNSELLING</a></li>
+                                    <li><a href="#">SCHOLARSHIP</a></li>
+                                    
+                                </ul>
+                          </div>
+                        </li>
+                    <li><a href="#"><i class="fa-solid fa-right-to-bracket fa-fade"></i>&nbsp;&nbsp;LOGIN</a>
+                    <div class="dropdown-content">
+                            <ul>
+                                <li><a href="#">ADMIN</a></li>
+                                <li><a href="#">STAFF</a></li>
+                                <li><a href="#">STUDENT</a></li>
+                            </ul>
+                      </div>
+                    </li>
+
+                    <li><a href="#"><i class="fa-solid fa-address-book fa-fade"></i>&nbsp;&nbspCONTACT</a></li>
+                </ul>
+            </div>
+                <div class="text-box">
+                    <h1>EDU-WORLD</h1><br>
+                    <p>Education is the passport to the future, for tomorrow belongs to those who prepare for it today.
+                        <br>We are here to help you<br>
+                        The name EDU-WORLD arose from the concept of a new, affordable approach to learning that immediately translates into a new career 
+                    </p>
+                        <a href="#" class="hero-btn">VISIT US TO KNOW MORE</a>
+                </div>
+    </section>
+            <section     id="courses" class="courses">
+                <h1><i class="fa-sharp fa-solid fa-star"></i>COURSES WE OFFER<i class="fa-sharp fa-solid fa-star"></i></h1>
+                <div class="row">
+                    <div class="course-col">
+                        <h3>Fine arts</h3>
+                        <p>In European academic traditions, fine art is made primarily for aesthetics or creative expression, distinguishing it from decorative art or applied art, which also has to serve some practical function.</p>
+                    </div>
+                    <div class="course-col">
+                        <h3>Bachelor of Science</h3>
+                        <p>
+                            Doctoral degree
+                            
+                            Bachelor of Science
+                            Bachelor of Science
+                            image of Bachelor of Science
+                            en.wikipedia.org
+                            A Bachelor of Science is a bachelor's degree awarded for programs that generally last three to five years. ..</p>
+                    </div>
+                    
+                    <div class="course-col">
+                        <h3>
+                            Doctoral degree</h3>
+                        <p>A doctorate, doctor's degree, or doctoral degree is a postgraduate academic degree awarded by universities and some other educational institutions,derived from the ancient formalism licentia docendi,.</p>
+                    </div><br>
+                </section>
+                    <section class="courses">
+                    <div class="course-col">
+                        <h3>Bachelor's degree</h3>
+                        <p>A bachelor's degree or baccalaureate is an undergraduate academic degree awarded by colleges and universities upon completion of a course of study lasting three to six years.</p>
+                    </div>
+                    <div class="course-col">
+                        <h3>Engineering</h3>
+                        <p>Engineering is the use of scientific principles to design and build machines, structures, and other items, including bridges, tunnels, roads, vehicles, and buildings..</p>
+                    </div>
+                    <div class="course-col">
+                        <h3>
+                            Bachelor of Science in Nursing</h3>
+                        <p>The Bachelor of Science in Nursing also known in some countries as a Bachelor of Nursing or Bachelor of Science with a Major in Nursing is an academic degree in the science and principles of nursing,.</p>
+                    </div>
+                    <div class="course-col">
+                        <h3>
+                            NURSING</h3>
+                        <p>What is nursing and what do nurses do?
+                            Registered nurses set up plans for patient care. Registered nurses (RNs) provide and coordinate patient care, educate patients and the public about various health conditions, and provide advice and emotional support to patients and their families.</p>
+                    </div>
+                    <div class="course-col">
+                    <h3>
+                        DIPLOMA</h3>
+                    <p>Diploma courses are short-term, skill-based courses, which are designed for specialised industrial or technical training. Depending on the sort of education, a diploma course might last anywhere from four months to three years..</p>
+                </div>
+                <div class="course-col">
+                    <h3>
+                        INTERSHIP PROGRAMS</h3>
+                    <p>What are internship Programmes?
+                        An internship is a professional learning experience that offers meaningful, practical work related to a student's field of study or career interest. An internship gives a student the opportunity for career exploration and development, and to learn new skills.</p>
+                </div>
+                    
+                </div>
+            </section>
+                <section class="campus">
+                        <h1><i class="fa-sharp fa-solid fa-star"></i>OUR CAMPUSES IN<i class="fa-sharp fa-solid fa-star"></i></h1>
+                        <div class="row">
+                            <div class="campus-col">
+                                <img src="london.png">
+                                <h1>HYDERABAD</h1>
+                                <div class="layer">
+                                </div>
+                            </div>
+                            <div class="campus-col">
+                                <img src="washington.png">
+                                <h1>CHENNAI</h1>
+                                <div class="layer">
+                                </div>
+                            </div>
+                            <div class="campus-col">
+                                <img src="newyork.png">
+                                <H1>MUMBAI</H1>
+                                <div class="layer">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="campus-col">
+                                <img src="view3.jpg">
+                                <h1>DELHI</h1>
+                                <div class="layer">
+                                </div>
+                            </div>
+                            <div class="campus-col">
+                                <img src="view2.jpg">
+                                <h1>BENGALURU</h1>
+                                <div class="layer">
+                                </div>
+                            </div>
+                            <div class="campus-col">
+                                <img src="view.jpg">
+                                <H1>KOLKATA</H1>
+                                <div class="layer">
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section id="facilities" class="facilities">
+                    <h1><i class="fa-sharp fa-solid fa-star"></i>OUR SERVIECES<i class="fa-sharp fa-solid fa-star"></i></h1>
+                    <div class="row">
+                        <div class="facilities-col">
+                            <img src="certificate1.jpg">
+                            <h3>STUDY LOAN FACILITY</h3>
+                        </div>
+                        <div class="facilities-col">
+                            <img src="coun.jpg">
+                            <h3>FREE COUNSELLING</h3>
+                        </div>
+                        <div class="facilities-col">
+                            <img src="PRO.jpg">
+                            <h3>EASY&FAST PROCESS</h3>
+                        </div>
+                    </div> 
+                    <div class="row">      
+                        <div class="facilities-col">
+                            <img src="library.png">
+                            <h3>SCHOLARSHIP</h3>
+                        </div>
+                        <div class="facilities-col">
+                            <img src="cafeteria.png">
+                            <h3>WORTHINESS</h3>
+                        </div>
+                        <div class="facilities-col">
+                            <img src="WORTH1.jpg">
+                            <h3>24*7 SUPPORT</h3>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="test-imonials">
+                    
+                </section>
+                <section class="footer">
+
+                    <h4> <img src="edulogo-1.png" width="99px" height="99px"><br>  PRIVACY POLICY
+                        |
+                        
+                        TERMS OF SERVICE<BR>
+                        © EDU-WORLD 2023</h4>
+                    <p>Upskill and reskill to empower your career.</p>
+                    <p>Echo Tech park,6th block,BANGLORE-556343</p>
+
+                    <div class="icons">
+                        <i class="fa-brands fa-facebook"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-brands fa-twitter"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-brands fa-square-instagram"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+
+                </section>
+    </div>
+        
+</body>
+</html>
